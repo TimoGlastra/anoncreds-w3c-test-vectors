@@ -1,0 +1,11 @@
+{
+  "id": "2b8e0eaa-1192-45a6-8b12-7fd95b949b98",
+  "definition_id": "5591656f-5b5d-40f8-ab5c-9041c8e3a6a0",
+  "descriptor_map": [
+    {
+      "id": "age-verification",
+      "format": "di_vc",
+      "path": "$.verifiableCredential[0]"
+    }
+  ]
+}

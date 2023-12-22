@@ -1,0 +1,8 @@
+{
+  "@context": "https://w3id.org/security/multikey/v1",
+  "id": "did:key:z6MkwXG2WjeQnNxSoynSGYU8V9j3QzP3JSqhdmkHc6SaVWoT#z6MkwXG2WjeQnNxSoynSGYU8V9j3QzP3JSqhdmkHc6SaVWoT",
+  "controller": "did:key:z6MkwXG2WjeQnNxSoynSGYU8V9j3QzP3JSqhdmkHc6SaVWoT",
+  "type": "Multikey",
+  "publicKeyMultibase": "z6MkkwiqX7BvkBbi37aNx2vJkCEYSKgHd2Jcgh4AUhi4YY1u",
+  "secretKeyMultibase": "zruzi8A5vXTjp84yKqX3Bw27C64ErRvaGKLyuX12rXLjPi724kpFjUGasrYjm1mBUsTVw89d5sVBg9dL6zUjTqCish9"
+}

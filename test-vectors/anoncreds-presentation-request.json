@@ -1,0 +1,26 @@
+{
+  "name": "Age verification",
+  "non_revoked": {
+    "from": 13,
+    "to": 200
+  },
+  "nonce": "200330081456739910968039",
+  "requested_attributes": {
+    "age-verification-attribute": {
+      "names": ["name", "height"],
+      "non_revoked": null,
+      "restrictions": null
+    }
+  },
+  "requested_predicates": {
+    "age-verification-predicate": {
+      "name": "age",
+      "non_revoked": null,
+      "p_type": ">=",
+      "p_value": 18,
+      "restrictions": null
+    }
+  },
+  "ver": "1.0",
+  "version": "0.1"
+}
