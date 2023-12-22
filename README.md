@@ -49,3 +49,5 @@ See [Test Vectors Directory](./test-vectors) for all the test vectors.
 - final PD structure is dependant on how we approach https://github.com/decentralized-identity/claim-format-registry/issues/8
 - Current presentation signature in test vectors is not valid as proof request is different than example PD in here.
 - DI attachments are not fully ready yet (pending RFC updates)
+- https://github.com/hyperledger/anoncreds-spec/issues/194
+- https://github.com/hyperledger/anoncreds-rs/issues/293
