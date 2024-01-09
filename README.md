@@ -51,3 +51,4 @@ See [Test Vectors Directory](./test-vectors) for all the test vectors.
 - DI attachments are not fully ready yet (pending RFC updates)
 - https://github.com/hyperledger/anoncreds-spec/issues/194
 - https://github.com/hyperledger/anoncreds-rs/issues/293
+- [Include number values as number rather than string in W3C credential](https://github.com/hyperledger/anoncreds-rs/issues/297)
