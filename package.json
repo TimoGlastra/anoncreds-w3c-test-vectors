@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "postinstall": "patch-package"
+  },
   "dependencies": {
     "@aries-framework/askar": "^0.5.0-alpha.71",
     "@aries-framework/core": "^0.5.0-alpha.71",
@@ -10,10 +13,12 @@
     "@digitalbazaar/data-integrity": "^2.0.0",
     "@digitalbazaar/ed25519-multikey": "^1.0.1",
     "@digitalbazaar/eddsa-rdfc-2022-cryptosuite": "^1.0.1",
-    "@hyperledger/aries-askar-nodejs": "^0.2.0-dev.5"
+    "@hyperledger/aries-askar-nodejs": "^0.2.0-dev.5",
+    "@sphereon/pex": "^2.2.2"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
+    "patch-package": "^8.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }

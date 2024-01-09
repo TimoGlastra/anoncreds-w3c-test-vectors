@@ -1,0 +1,54 @@
+diff --git a/node_modules/@sphereon/pex/dist/browser/lib/validation/core/ldpTypes.js b/node_modules/@sphereon/pex/dist/browser/lib/validation/core/ldpTypes.js
+index 30dc164..792f4d4 100644
+--- a/node_modules/@sphereon/pex/dist/browser/lib/validation/core/ldpTypes.js
++++ b/node_modules/@sphereon/pex/dist/browser/lib/validation/core/ldpTypes.js
+@@ -15,6 +15,7 @@ class LdpTypes {
+             'JcsEd25519Signature2020',
+             'BbsBlsSignature2020',
+             'Bls12381G2Key2020',
++            'DataIntegrityProof'
+         ];
+     }
+ }
+diff --git a/node_modules/@sphereon/pex/dist/main/lib/evaluation/handlers/limitDisclosureEvaluationHandler.js b/node_modules/@sphereon/pex/dist/main/lib/evaluation/handlers/limitDisclosureEvaluationHandler.js
+index ac1043c..d95f2ff 100644
+--- a/node_modules/@sphereon/pex/dist/main/lib/evaluation/handlers/limitDisclosureEvaluationHandler.js
++++ b/node_modules/@sphereon/pex/dist/main/lib/evaluation/handlers/limitDisclosureEvaluationHandler.js
+@@ -80,10 +80,10 @@ class LimitDisclosureEvaluationHandler extends abstractEvaluationHandler_1.Abstr
+     }
+     copyResultPathToDestinationCredential(requiredField, internalCredential, internalCredentialToSend) {
+         //TODO: ESSIFI-186
+-        let credentialSubject = Object.assign({}, internalCredential.credentialSubject);
++        let credentialSubject = {};
+         requiredField.path.forEach((e) => {
+-            if (credentialSubject[e]) {
+-                credentialSubject = { [e]: credentialSubject[e] };
++            if (internalCredential.credentialSubject[e]) {
++              credentialSubject[e] = internalCredential.credentialSubject[e];
+             }
+         });
+         internalCredentialToSend.credentialSubject = Object.assign(Object.assign({}, internalCredentialToSend.credentialSubject), credentialSubject);
+diff --git a/node_modules/@sphereon/pex/dist/main/lib/validation/core/ldpTypes.js b/node_modules/@sphereon/pex/dist/main/lib/validation/core/ldpTypes.js
+index 30dc164..792f4d4 100644
+--- a/node_modules/@sphereon/pex/dist/main/lib/validation/core/ldpTypes.js
++++ b/node_modules/@sphereon/pex/dist/main/lib/validation/core/ldpTypes.js
+@@ -15,6 +15,7 @@ class LdpTypes {
+             'JcsEd25519Signature2020',
+             'BbsBlsSignature2020',
+             'Bls12381G2Key2020',
++            'DataIntegrityProof'
+         ];
+     }
+ }
+diff --git a/node_modules/@sphereon/pex/dist/module/lib/validation/core/ldpTypes.js b/node_modules/@sphereon/pex/dist/module/lib/validation/core/ldpTypes.js
+index 2af881e..e865296 100644
+--- a/node_modules/@sphereon/pex/dist/module/lib/validation/core/ldpTypes.js
++++ b/node_modules/@sphereon/pex/dist/module/lib/validation/core/ldpTypes.js
+@@ -12,6 +12,7 @@ export class LdpTypes {
+             'JcsEd25519Signature2020',
+             'BbsBlsSignature2020',
+             'Bls12381G2Key2020',
++            'DataIntegrityProof'
+         ];
+     }
+ }
