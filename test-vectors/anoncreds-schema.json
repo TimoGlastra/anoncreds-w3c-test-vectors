@@ -1,6 +1,12 @@
 {
   "name": "schema-1",
   "version": "1",
-  "attrNames": ["name", "age", "sex", "height"],
-  "issuerId": "did:example:123"
+  "attrNames": [
+    "id",
+    "name",
+    "age",
+    "sex",
+    "height"
+  ],
+  "issuerId": "did:key:z6MkwXG2WjeQnNxSoynSGYU8V9j3QzP3JSqhdmkHc6SaVWoT"
 }

@@ -29,11 +29,11 @@ See [Test Vectors Directory](./test-vectors) for all the test vectors.
 - [aries-issue-credential-di-request-signed-attachment.json](./test-vectors/aries-issue-credential-di-request-signed-attachment.json)
 - [anoncreds-link-secret.json](./test-vectors/anoncreds-link-secret.json)
 - [aries-issue-credential-di-request.json](./test-vectors/aries-issue-credential-di-request.json)
-- [anoncreds-offer.json](./test-vectors/anoncreds-offer.json)
+- [anoncreds-credential-offer.json](./test-vectors/anoncreds-credential-offer.json)
 - [dif-presentation-definition.json](./test-vectors/dif-presentation-definition.json)
 - [anoncreds-presentation-request.json](./test-vectors/anoncreds-presentation-request.json)
 - [dif-presentation-submission.json](./test-vectors/dif-presentation-submission.json)
-- [anoncreds-request.json](./test-vectors/anoncreds-request.json)
+- [anoncreds-credential-request.json](./test-vectors/anoncreds-credential-request.json)
 - [eddsa-holder-key.json](./test-vectors/eddsa-holder-key.json)
 - [eddsa-issuer-key.json](./test-vectors/eddsa-issuer-key.json)
 - [anoncreds-revocation-registry-definition.json](./test-vectors/anoncreds-revocation-registry-definition.json)
@@ -41,14 +41,13 @@ See [Test Vectors Directory](./test-vectors) for all the test vectors.
 - [w3c-credential-anoncreds-eddsa.json](./test-vectors/w3c-credential-anoncreds-eddsa.json)
 - [anoncreds-schema.json](./test-vectors/anoncreds-schema.json)
 - [w3c-credential-anoncreds.json](./test-vectors/w3c-credential-anoncreds.json)
+- [w3c-v2-credential-anoncreds.json](./test-vectors/w3c-v2-credential-anoncreds.json)
 - [aries-issue-credential-di-issue.json](./test-vectors/aries-issue-credential-di-issue.json)
 - [w3c-presentation-anoncreds.json](./test-vectors/w3c-presentation-anoncreds.json)
 
 ## Notes / TODO
 
 - final PD structure is dependant on how we approach https://github.com/decentralized-identity/claim-format-registry/issues/8
-- Current presentation signature in test vectors is not valid as proof request is different than example PD in here.
 - DI attachments are not fully ready yet (pending RFC updates)
-- https://github.com/hyperledger/anoncreds-spec/issues/194
-- https://github.com/hyperledger/anoncreds-rs/issues/293
+- [Remove `Predicate` type from VP](https://github.com/hyperledger/anoncreds-spec/issues/194)
 - [Include number values as number rather than string in W3C credential](https://github.com/hyperledger/anoncreds-rs/issues/297)

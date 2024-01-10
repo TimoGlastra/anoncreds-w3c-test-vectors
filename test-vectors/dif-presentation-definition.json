@@ -19,7 +19,7 @@
             "path": ["$.issuer"],
             "filter": {
               "type": "string",
-              "const": "did:example:123"
+              "const": "did:key:z6MkwXG2WjeQnNxSoynSGYU8V9j3QzP3JSqhdmkHc6SaVWoT"
             }
           },
           {

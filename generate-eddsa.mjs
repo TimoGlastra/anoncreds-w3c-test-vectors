@@ -9,6 +9,7 @@ import jsonld from "jsonld";
 import anoncredsSignedCredential from "./test-vectors/w3c-credential-anoncreds.json" assert { type: "json" };
 import eddsaIssuerKey from "./test-vectors/eddsa-issuer-key.json" assert { type: "json" };
 import eddsaHolderKey from "./test-vectors/eddsa-holder-key.json" assert { type: "json" };
+import { writeFileSync } from "fs";
 
 // grab the built-in Node.js doc loader
 const nodeDocumentLoader = jsonld.documentLoaders.node();
@@ -62,4 +63,8 @@ const signedCredential = await jsigs.sign(anoncredsSignedCredential, {
   purpose: new AssertionProofPurpose(),
   documentLoader: customLoader,
 });
+writeFileSync(
+  "./test-vectors/w3c-credential-anoncreds-eddsa.json",
+  JSON.stringify(signedCredential, null, 2)
+);
 console.log(JSON.stringify(signedCredential, null, 2));

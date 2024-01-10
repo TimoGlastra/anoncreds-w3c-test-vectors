@@ -2,6 +2,7 @@ import { PEXv1, Status } from "@sphereon/pex";
 
 import presentationDefinition from "./test-vectors/dif-presentation-definition.json" assert { type: "json" };
 import w3cCredentialAnonCreds from "./test-vectors/w3c-credential-anoncreds.json" assert { type: "json" };
+import { writeFileSync } from "fs";
 
 const pex = new PEXv1();
 
@@ -75,5 +76,19 @@ if (selectResults.areRequiredCredentialsPresent === Status.ERROR) {
 const vp = pex.presentationFrom(
   presentationDefinition,
   selectResults.verifiableCredential
+);
+writeFileSync(
+  "./test-vectors/dif-presentation-submission.json",
+  JSON.stringify(
+    {
+      ...vp.presentationSubmission,
+      descriptor_map: [
+        // FIXME: output is ldp_vc as pex doesn't support di_vc, but test vector expects di_vc
+        { ...vp.presentationSubmission.descriptor_map[0], format: "di_vc" },
+      ],
+    },
+    null,
+    2
+  )
 );
 console.log(JSON.stringify(vp, null, 2));

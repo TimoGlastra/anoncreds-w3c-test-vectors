@@ -12,6 +12,7 @@ import { agentDependencies } from "@aries-framework/node";
 import { AskarModule } from "@aries-framework/askar";
 import eddsaHolderKey from "./test-vectors/eddsa-holder-key.json" assert { type: "json" };
 import * as base58btc from "base58-universal";
+import { writeFileSync } from "fs";
 // multicodec ed25519-pub header as varint
 const MULTICODEC_PUB_HEADER = new Uint8Array([0xed, 0x01]);
 // multicodec ed25519-priv header as varint
@@ -58,7 +59,7 @@ const agent = new Agent({
   config: {
     label: "test",
     walletConfig: {
-      id: "test",
+      id: "test" + Math.random(),
       key: "test",
     },
   },
@@ -74,7 +75,7 @@ await agent.initialize();
 
 const data = TypedArrayEncoder.fromString(
   JSON.stringify({
-    aud: "did:example:123",
+    aud: "did:key:z6MkwXG2WjeQnNxSoynSGYU8V9j3QzP3JSqhdmkHc6SaVWoT",
     nonce: "b19439b0-4dc9-4c28-b796-99d17034fb5c",
   })
 );
@@ -109,4 +110,8 @@ const jws = await jwsService.createJws(agent.context, {
 
 attachment.addJws(jws);
 
+writeFileSync(
+  "./test-vectors/aries-issue-credential-di-request-signed-attachment.json",
+  JSON.stringify(JsonTransformer.toJSON(attachment), null, 2)
+);
 console.log(JSON.stringify(JsonTransformer.toJSON(attachment), null, 2));
