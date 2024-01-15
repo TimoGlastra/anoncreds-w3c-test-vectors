@@ -2,11 +2,23 @@
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
     "https://w3id.org/security/data-integrity/v2",
+    "https://identity.foundation/presentation-exchange/submission/v1",
     {
       "@vocab": "https://www.w3.org/ns/credentials/issuer-dependent#"
     }
   ],
   "type": ["VerifiablePresentation"],
+  "presentation_submission": {
+    "id": "4COn2UmbwsIGzFh5-phaN",
+    "definition_id": "5591656f-5b5d-40f8-ab5c-9041c8e3a6a0",
+    "descriptor_map": [
+      {
+        "id": "age-verification",
+        "format": "di_vc",
+        "path": "$.verifiableCredential[0]"
+      }
+    ]
+  },
   "verifiableCredential": [
     {
       "@context": [
