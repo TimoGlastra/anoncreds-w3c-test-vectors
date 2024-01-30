@@ -13,6 +13,11 @@
         }
       ],
       "constraints": {
+          "statuses": {
+            "active": {
+              "directive": "required"
+          }
+        },
         "limit_disclosure": "required",
         "fields": [
           {
