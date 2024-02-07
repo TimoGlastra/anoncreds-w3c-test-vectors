@@ -528,6 +528,23 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.0.tgz#0709e9f4cb252351c609c6e6d8d6779a8d25edff"
   integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
 
+"@hyperledger/anoncreds-nodejs@^0.2.0-dev.11":
+  version "0.2.0-dev.11"
+  resolved "https://registry.yarnpkg.com/@hyperledger/anoncreds-nodejs/-/anoncreds-nodejs-0.2.0-dev.11.tgz#de89612c64a5531790680e0f92ac9060321202d0"
+  integrity sha512-gBKWAc6ViyAbntLGJKwMN1tC6S8VxGDRgJiZxw6KJb/1H7wAB62kpS0oT80SwCEhbirgmOhLZQUlwmYoUqHddg==
+  dependencies:
+    "@2060.io/ffi-napi" "4.0.8"
+    "@2060.io/ref-napi" "3.0.6"
+    "@hyperledger/anoncreds-shared" "0.2.0-dev.11"
+    "@mapbox/node-pre-gyp" "^1.0.11"
+    ref-array-di "1.2.2"
+    ref-struct-di "1.1.1"
+
+"@hyperledger/anoncreds-shared@0.2.0-dev.11":
+  version "0.2.0-dev.11"
+  resolved "https://registry.yarnpkg.com/@hyperledger/anoncreds-shared/-/anoncreds-shared-0.2.0-dev.11.tgz#2ee81aad40be00a9cf420f43ddf0249088f60368"
+  integrity sha512-8Pspg14+/q7ayGGXk9y1wbrgZtyeEON0z6nxmK2KkcKv0EG2GL/590+xlroRWo8NDjCDVkvHIMfH+qeXGcJO0Q==
+
 "@hyperledger/aries-askar-nodejs@^0.2.0-dev.6":
   version "0.2.0-dev.6"
   resolved "https://registry.yarnpkg.com/@hyperledger/aries-askar-nodejs/-/aries-askar-nodejs-0.2.0-dev.6.tgz#0a86dc3215db8d147a4fef9404267a5e94e503a5"
@@ -588,7 +605,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@mapbox/node-pre-gyp@^1.0.10":
+"@mapbox/node-pre-gyp@^1.0.10", "@mapbox/node-pre-gyp@^1.0.11":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.11.tgz#417db42b7f5323d79e93b34a6d7a2a12c0df43fa"
   integrity sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==
@@ -2756,7 +2773,7 @@ readable-stream@^3.6.0:
     string_decoder "^1.1.1"
     util-deprecate "^1.0.1"
 
-ref-array-di@^1.2.2:
+ref-array-di@1.2.2, ref-array-di@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/ref-array-di/-/ref-array-di-1.2.2.tgz#ceee9d667d9c424b5a91bb813457cc916fb1f64d"
   integrity sha512-jhCmhqWa7kvCVrWhR/d7RemkppqPUdxEil1CtTtm7FkZV8LcHHCK3Or9GinUiFP5WY3k0djUkMvhBhx49Jb2iA==
@@ -2764,7 +2781,7 @@ ref-array-di@^1.2.2:
     array-index "^1.0.0"
     debug "^3.1.0"
 
-ref-struct-di@^1.1.0, ref-struct-di@^1.1.1:
+ref-struct-di@1.1.1, ref-struct-di@^1.1.0, ref-struct-di@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ref-struct-di/-/ref-struct-di-1.1.1.tgz#5827b1d3b32372058f177547093db1fe1602dc10"
   integrity sha512-2Xyn/0Qgz89VT+++WP0sTosdm9oeowLP23wRJYhG4BFdMUrLj3jhwHZNEytYNYgtPKLNTP3KJX4HEgBvM1/Y2g==

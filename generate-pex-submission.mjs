@@ -6,22 +6,6 @@ import { writeFileSync } from "fs";
 
 const pex = new PEXv1();
 
-// FIXME: di_vc is not supported in sphereon pex library
-// @see https://github.com/decentralized-identity/claim-format-registry/issues/8
-presentationDefinition.format = {
-  ldp_vc: {
-    // FIXME: PEX only supports known proof types, and doesn't support DataIntegrityProof
-    // NOTE: working due to patch-package
-    // @see https://github.com/Sphereon-Opensource/PEX/issues/134
-    proof_type: ["DataIntegrityProof"],
-  },
-};
-
-// FIXME: PEX does not support VCs with proof array for limit disclosure. It will just
-// ignore limit disclosure in this case. So AnonCreds W3C vc MUST have proof object
-// Or we need to update PEX
-w3cCredentialAnonCreds.proof = w3cCredentialAnonCreds.proof[0];
-
 const validated = PEXv1.validateDefinition(presentationDefinition);
 if (validated.length !== 1 || validated[0].status === Status.ERROR) {
   throw new Error(
@@ -33,10 +17,7 @@ const evaluated = pex.evaluateCredentials(
   presentationDefinition,
   [w3cCredentialAnonCreds],
   {
-    // FIXME: as all signature suites will be DataIntegrityProof going forward
-    // We will have to extend the API here to allow for cryptosuite. Either by passing
-    // the cryptosuite to this array (either by prepending DataIntegrityProof -> "DataIntegrityProof.anoncredsvc-2023")
-    limitDisclosureSignatureSuites: ["DataIntegrityProof"],
+    limitDisclosureSignatureSuites: ["DataIntegrityProof.anoncreds-2023"],
   }
 );
 console.log(JSON.stringify(evaluated.verifiableCredential, null, 2));
@@ -52,10 +33,7 @@ const selectResults = pex.selectFrom(
   presentationDefinition,
   [w3cCredentialAnonCreds],
   {
-    // FIXME: as all signature suites will be DataIntegrityProof going forward
-    // We will have to extend the API here to allow for cryptosuite. Either by passing
-    // the cryptosuite to this array (either by prepending DataIntegrityProof -> "DataIntegrityProof.anoncredsvc-2023")
-    limitDisclosureSignatureSuites: ["DataIntegrityProof"],
+    limitDisclosureSignatureSuites: ["DataIntegrityProof.anoncreds-2023"],
   }
 );
 
@@ -82,9 +60,14 @@ writeFileSync(
   JSON.stringify(
     {
       ...vp.presentationSubmission,
+      // FIXME: PEX outputs this as di_vp, but as the presentation_submission is within the presentation
+      // it should be di_vc and there's no path_nested
+      // https://github.com/Sphereon-Opensource/PEX/pull/142
       descriptor_map: [
-        // FIXME: output is ldp_vc as pex doesn't support di_vc, but test vector expects di_vc
-        { ...vp.presentationSubmission.descriptor_map[0], format: "di_vc" },
+        {
+          ...vp.presentationSubmission.descriptor_map[0],
+          format: "di_vc",
+        },
       ],
     },
     null,

@@ -11,7 +11,8 @@
     "@digitalbazaar/ed25519-multikey": "^1.0.1",
     "@digitalbazaar/eddsa-rdfc-2022-cryptosuite": "^1.0.1",
     "@hyperledger/aries-askar-nodejs": "^0.2.0-dev.6",
-    "@sphereon/pex": "3.2.1-unstable.7"
+    "@sphereon/pex": "3.2.1-unstable.7",
+    "@hyperledger/anoncreds-nodejs": "^0.2.0-dev.11"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
